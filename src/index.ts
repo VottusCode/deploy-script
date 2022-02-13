@@ -10,7 +10,7 @@ export class Deploy {
   /**
    * Local root directory.
    */
-  private rootDir: string = path.join(__dirname, "..", "..");
+  private rootDir: string;
 
   /**
    * Remote root directory.
@@ -56,6 +56,7 @@ export class Deploy {
     public cmd: BaseCmdRemote | null | undefined,
     private options: DeployOptions
   ) {
+    this.rootDir = options.rootDir ?? process.cwd();
     this.remoteDir = options.remoteDir ?? "/var/www/html";
     this.clearFolders = options.clearFolders ?? [];
     this.ensureFolders = options.ensureFolders ?? [];

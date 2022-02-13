@@ -2,6 +2,7 @@ import { BaseFileRemote } from "@remotefull/file";
 import { BaseCmdRemote } from "@remotefull/commander/dist/remote/BaseCmdRemote";
 
 export interface DeployOptions {
+  rootDir?: string;
   onlyUpdateEnv?: boolean;
   skipPostCommands?: boolean;
   remoteDir: string;
